@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> 
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+
+
+    <link rel="stylesheet" href="{% static 'store/css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'store/css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'store/css/all.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'store/css/owl.carousel.min.css' %}" />
+
+
+
+    <title>Document</title>
+</head>
+
+
+
+
+
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+      </li>
+      
+     <li class="nav-item dropdown text-white">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Products
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+         <li> <a class="dropdown-item" href="{% url 'category' 'gr' %}">Gerdoo</a></li>
+          <li><a class="dropdown-item" href="{% url 'category' 'ps' %}">Peste</a></li>
+          <li><a class="dropdown-item" href="{% url 'category' 'tk' %}">Tokhme</a></li>
+          <li><a class="dropdown-item" href="{% url 'category' 'fn' %}">Fandogh</a></li>
+         <li> <a class="dropdown-item" href="{% url 'category' 'bh' %}">Badoom-Hendi</a></li>
+         <li> <a class="dropdown-item" href="{% url 'category' 'bd' %}">Badoom-Derakhti</a></li>
+        </ul>
+      
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'about' %}">About Us</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link text-white" href="{% url 'contact' %}">Contact Us</a>
+      </li>
+      
+    </ul>
+    <a class="navbar-brand" href="#">
+    <img src=" {% static 'store/images/product/logo.png' %}" style=" width : 50px; height: 50px">
+  </a>
+    
+  </div>
+  <ul class="navbar-nav mr-auto">
+     <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Ashkan
+        </a>
+        <div class="dropdown-menu" aria-labelledby="profileDropdown">
+          <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+          <a class="dropdown-item" href="{% url 'orders' %}">Orders</a>
+          <a class="dropdown-item" href="#">Change Password</a>
+          <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+          
+        </div>
+      </li>
+
+      <li class="nav-item mx-2">
+        <a href="{% url 'showcard' %}" class="nav-link text-white">Card</a>
+    
+      </li>
+      
+      <li class="nav-item mx-2">
+        <a href="{% url 'login' %}" class="nav-link text-white">Login</a>
+    
+      </li>
+      <li class="nav-item mx-2">
+        <a href="{% url 'customerregistration' %}" class="nav-link text-white">Registration</a>
+    
+      </li>
+
+
+
+
+
+  </ul>
+</nav>
+    
+{% block banner_slider %}{% endblock banner_slider %}
+{% block information %}{% endblock information %}
+{% block main-content %}{% endblock main-content %}
+
+<footer class="container-fluid fixed-bottom bg-danger text-center p-2 mt-5">Copyright 2023@ || Develop by Ashkan Aghaei</footer>
+
+     {% comment %} <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> {% endcomment %}
+
+
+
+<script src="{% static 'store/js/myscript.js' %}"></script>
+<script src="{% static 'store/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'store/js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'store/js/all.min.js' %}"></script>
+<script src="{% static 'store/js/owl.carousel.min.js' %}"></script>
+ 
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block title %}Orders{% endblock title %}
+{% block main-content %}
+<div class="container">
+    <div class="row">
+        <h3>Welcomes <span class="text-capitalize">{{request.user}}</span> </h3>
+        <div class="dol-sm-3 border-end">
+            <div class="list-unstyled">
+                <li class="d-grid"><a href="{% url 'orders' %}" class="btn btn-primary">Orders</a></li>
+            </div>
+        </div>
+    </div>
+
+    <div class="dol-sm-9 offset-sm-1">
+        {% for op in order_placed %}
+        <div class="row">
+            <div class="col-sm-2">
+                <img src="{{op.product.product_image.url}}" class="img-fluid" alt="">
+            </div>
+            <div class="col-sm-7">
+                <p>Product: {{op.product.title}}</p>
+                <p>quantity: {{op.quantity}}</p>
+                <p>Price: {{op.total_cost}}</p>
+
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock main-content %}

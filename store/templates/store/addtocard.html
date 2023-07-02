@@ -1,0 +1,41 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block title %}Card{% endblock title %}
+{% block main-content %}
+<div class="container m5-5">
+    <div class="row">
+        {% if card %}
+        <h1 class="text-center mb-5">Shopping Card</h1>
+        <div class="col-sm-8">
+            <div class="card-body">
+                <h3>Card</h3>
+                {% for item in card %}
+                <div class="row">
+                    <div class="col-sm-3 text-center align-self-center">
+                        <img src="{{item.product.product_image.url}}" alt="" class="img-fluid img-thumbnail shadow-sm" >
+                    </div>
+                    <div class="col-sm-9">
+                        <div>
+                            <h5>{{item.product.title}}</h5>
+                            <p class="mb-2 text-muted small">{{item.product.description}}</p>
+                            <div class="my-3">
+                                <label for="quantity">Quantity:</label>
+                                <a pid={{item.product.id}} class="minus-card btn"><i class="fas fa-minus-square fa-lg"></i></a>
+                                <span id="quantity">{{item.quantity}}</span>
+                                <a pid={{item.product.id}} class="plus-card btn"><i class="fas fa-plus-square fa-lg"></i></a>
+                            </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="" class="remove-card btn btn-sm btn-secondary mr-3" pid={{item.product.id}}>Remove Item</a>
+                                <p class="mb-0"><span>TMN. {{item.product.selling_price}}</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock main-content %}
